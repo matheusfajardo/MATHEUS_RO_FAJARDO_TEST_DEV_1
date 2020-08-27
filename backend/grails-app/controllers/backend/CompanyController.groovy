@@ -1,8 +1,8 @@
 package backend
 
-class StockController {
+class CompanyController {
 
-    def stockService
+    def companyService
     
     def index() {   
         render(404, text: 'NOT FOUND');
@@ -12,11 +12,13 @@ class StockController {
         if(params.company && params.hours){
             int horas = params.hours as Integer;
             
-            render stockService.getStocks(params.company, horas) as grails.converters.JSON;
+            render companyService.getStocks(params.company, horas) as grails.converters.JSON;
         }
-               
-
         else
             render(status:400, text: 'BAD REQUEST');      
+    }
+
+    def getCompaniesWithDeviation(){
+        render companyService.getCompaniesWithDeviation() as grails.converters.JSON;
     }
 }

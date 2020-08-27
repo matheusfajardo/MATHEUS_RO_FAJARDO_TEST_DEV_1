@@ -25,7 +25,8 @@ class BootStrap {
                 mesInicial.set(Calendar.HOUR_OF_DAY, 10);
                 mesInicial.set(Calendar.MINUTE, 0);
             }
-            else if(mesInicial.get(Calendar.HOUR_OF_DAY) >= 18) {
+            else if(mesInicial.get(Calendar.HOUR_OF_DAY) > 18 
+                || (mesInicial.get(Calendar.HOUR_OF_DAY) == 18 && mesInicial.get(Calendar.MINUTE) > 0)) {
                 
                 mesInicial.add(Calendar.DAY_OF_MONTH, 1);
                 mesInicial.set(Calendar.HOUR_OF_DAY, 10);

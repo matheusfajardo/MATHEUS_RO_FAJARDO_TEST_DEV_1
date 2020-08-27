@@ -1,5 +1,9 @@
- <app-header></app-header>
- <div layout="row" layout-fill layout-align="center center">
+<app-header></app-header>
 
-   <app-stock-list-table></app-stock-list-table>
- </div>
+<div class="formStyle">
+  <button mat-raised-button color="primary" (click)="getCompaniesWithDeviation()">GET COMPANIES</button>
+</div>
+
+<div layout="row" class="tableStyle">
+  <app-company-table [companiesWithDeviation]="companiesWithDeviation"></app-company-table>
+</div>
